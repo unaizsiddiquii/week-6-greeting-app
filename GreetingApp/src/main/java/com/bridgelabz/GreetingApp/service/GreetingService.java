@@ -5,6 +5,8 @@ import com.bridgelabz.GreetingApp.model.Greeting;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class GreetingService {
     private final GreetingRepository greetingRepository;
@@ -33,5 +35,9 @@ public class GreetingService {
         greetingRepository.save(greeting);
 
         return greetMessage;
+    }
+
+    public Optional<Greeting> getGreetingById(Long id) {
+        return greetingRepository.findById(id);
     }
 }
