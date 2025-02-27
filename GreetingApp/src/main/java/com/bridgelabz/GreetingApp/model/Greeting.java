@@ -1,9 +1,12 @@
 package com.bridgelabz.GreetingApp.model;
 
-public class User {
+public class Greeting {
     private String firstName;
     private String message;
 
+    public Greeting(String message) {
+        this.message = message;
+    }
 
     public String getFirstName() {
         return firstName;
