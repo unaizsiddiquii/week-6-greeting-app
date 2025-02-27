@@ -53,5 +53,11 @@ public class GreetController {
         return new Greeting(greetingService.getGreetMessage(firstname, lastname));
     }
 
+    @PostMapping("/savegreeting")
+    public Greeting saveGreeting(@RequestParam(required = false) String firstName,
+                                 @RequestParam(required = false) String lastName) {
+        String message = greetingService.getGreetMessage(firstName, lastName);
+        return new Greeting(message);
+    }
 
 }
